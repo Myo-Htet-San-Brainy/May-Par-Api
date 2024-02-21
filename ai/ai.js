@@ -14,15 +14,11 @@ const chat = model.startChat({
   },
 });
 
-async function run(question, language) {
-  const msg = `${question}. Answer me in ${language} language.`;
-  console.log(msg);
-
-  const result = await chat.sendMessage(msg);
+async function run(question) {
+  const result = await chat.sendMessage(question);
   const response = await result.response;
   const text = response.text();
-  console.log(text);
   return text;
 }
 
-module.exports = { run, chat };
+module.exports = { run };

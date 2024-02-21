@@ -1,12 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
-const {
-  getAiAnswers,
-  createAiAnswer,
-} = require("../controller/aiAnswerController");
+const { generateAiAnswers } = require("../controller/aiAnswerController");
 
-router.get("/", getAiAnswers);
-router.post("/", createAiAnswer);
+router.post("/", generateAiAnswers);
 
 module.exports = router;
