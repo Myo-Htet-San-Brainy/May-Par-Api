@@ -1,0 +1,23 @@
+{
+  "name": "may-pr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google/generative-ai": "^0.2.0",
+    "@sendgrid/mail": "^8.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.1",
+    "express": "^4.18.2",
+    "express-async-error": "^0.0.2",
+    "mongoose": "^8.1.3",
+    "nodemon": "^3.0.3"
+  }
+}
