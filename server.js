@@ -4,11 +4,14 @@ const app = express();
 
 //imports
 const cors = require("cors");
+const morgan = require("morgan");
 const aiAnswerRouter = require("./router/aiAnswerRouter");
 
 //middleware
 app.use(express.json());
-app.use(cors());
+const allowedOrigins = ["https://maypar.netlify.app", "http://localhost:5173"];
+app.use(cors(allowedOrigins));
+app.use(morgan("tiny"));
 
 //apis
 app.use("/api/v1/aiAnswers", aiAnswerRouter);
