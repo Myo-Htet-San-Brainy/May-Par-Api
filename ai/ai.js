@@ -2,6 +2,7 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 const history = require("./history");
 
 // Access your API key as an environment variable (see "Set up your API key" above)
+require("dotenv").config();
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_APIKEY);
 
 async function run(question) {
@@ -13,7 +14,6 @@ async function run(question) {
       maxOutputTokens: 100,
     },
   });
-  console.log(question);
   const result = await chat.sendMessage(question);
   const response = await result.response;
   const text = response.text();
