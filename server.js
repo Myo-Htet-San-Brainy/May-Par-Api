@@ -7,7 +7,11 @@ const morgan = require("morgan");
 
 //middleware
 const allowedOrigins = ["https://maypar.netlify.app", "http://localhost:5173"];
-app.use(cors(allowedOrigins));
+app.use(
+  cors({
+    origin: allowedOrigins,
+  })
+);
 app.use(morgan("tiny"));
 
 //start the server
